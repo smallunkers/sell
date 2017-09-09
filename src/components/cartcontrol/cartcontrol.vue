@@ -1,12 +1,12 @@
 <template>
   <div class="cartcontrol">
     <transition name="move">
-    <div class="cart-decrease " v-show="food.count>0" @click="decreaseCart">
+    <div class="cart-decrease " v-show="food.count>0" @click.stop.prevent="decreaseCart">
       <span class="inner icon-remove_circle_outline"></span>
     </div>
     </transition>
     <div class="cart-count" v-show="food.count>0">{{food.count}}</div>
-    <div class="cart-add icon-add_circle" @click="addCart"></div>
+    <div class="cart-add icon-add_circle" @click.stop.prevent="addCart"></div>
   </div>
 </template>
 
@@ -20,18 +20,18 @@
       },
       methods: {
         addCart (event) {
-          if (!event.constructor) {
+          if (!event._constructed) {
             return;                 // 不是默认派发的就return，避免执行两次
           }
           if (!this.food.count) {
             Vue.set(this.food, 'count', 1);
           } else {
             this.food.count ++;
-            this.$root.eventHub.$emit('cart.add', event.target);
           }
+          this.$root.eventHub.$emit('cart.add', event.target);
         },
         decreaseCart (event) {
-          if (!event.constructor) {
+          if (!event._constructed) {
             return;                 // 不是默认派发的就return，避免执行两次
           }
           if (this.food.count) {

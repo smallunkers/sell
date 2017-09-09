@@ -114,7 +114,7 @@
                 return;
               }
             }
-          });// $root是根组件，eventHub是一个空对象，事件派发中心，$on监听事件'cart.add',然后回调drop函数。
+          });// $root是根组件，eventHub是一个空对象，事件派发中心，$on监听事件'cart.add',然后回调函数。
         },
         computed: {
           totalPrice () {
@@ -122,14 +122,14 @@
             this.selectFoods.forEach((food) => {
               total += food.count * food.price;
             });
-            return total;
+            return total;   // 计算已选总价
           },
           totalCount () {
             let count = 0;
             this.selectFoods.forEach((food) => {
               count += food.count;
             });
-            return count;
+            return count;  // 计算已选数量
           },
           payDesc () {
             if (this.totalPrice === 0) {
@@ -138,14 +138,14 @@
                 let diff = this.minPrice - this.totalPrice;
                 return `还差￥${diff}元起送`;
             } else {
-                return '去结算';
+                return '去结算';  // 计算差价不同显示不同结果
             }
           },
           payClass () {
             if (this.totalPrice >= this.minPrice) {
               return 'enough';
             } else {
-              return 'not-enough';
+              return 'not-enough';  // 绑定类区分不同样式
             }
           },
           listShow () {
@@ -163,7 +163,7 @@
                     click: true
                   });
                 } else {
-                  this.scroll.refresh();
+                  this.scroll.refresh(); // 初始化滚动条组件，存在就刷新
                 }
               });
             }
@@ -175,21 +175,21 @@
             if (this.totalPrice < this.minPrice) {
               return;
             }
-            window.alert(`支付${this.totalPrice}元`);
+            window.alert(`支付${this.totalPrice}元`);  // 支付事件
           },
           hideList () {
-            this.fold = true;
+            this.fold = true;  // 隐藏事件
           },
           empty () {
             this.selectFoods.forEach((food) => {
-              food.count = 0;
+              food.count = 0;  // 清空购物
             });
           },
           toggleList () {
             if (!this.totalCount) {
               return;
             }
-            this.fold = !this.fold;
+            this.fold = !this.fold; // 折叠隐藏
           },
           beforeEnter (el) {
             let count = this.balls.length;

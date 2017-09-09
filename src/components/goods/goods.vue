@@ -1,4 +1,5 @@
 <template>
+    <div>
     <div class="goods">
         <div class="menu-wrapper" ref="menuWrapper">
             <ul>
@@ -14,7 +15,7 @@
                 <li v-for="(item,index) in goods" class="food-list food-list-hook">
                     <h1 class="title">{{item.name}}</h1>
                     <ul>
-                        <li v-for="(food,index) in item.foods" class="food-item border-1px">
+                        <li @click="selectFood(food,$event)" v-for="(food,index) in item.foods" class="food-item border-1px">
                             <div class="icon">
                                 <img width="57" height="57" :src="food.icon"/>
                             </div>
@@ -40,12 +41,15 @@
         </div>
         <shopcart :select-foods="selectFoods" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
     </div>
+    <food :food="selectedFood" ref="food"></food>
+    </div>
 </template>
 
 <script type="text/ecmascript-6">
     import BSscroll from 'better-scroll';
     import shopcart from '../shopcart/shopcart.vue';
     import cartcontrol from '../cartcontrol/cartcontrol.vue';
+    import food from '../food/food.vue';
     const ERR_OK = 0;
     export default {
       props: {
@@ -57,12 +61,14 @@
         return {
           goods: [],
           listHeight: [],
-          scrollY: 0
+          scrollY: 0,
+          selectedFood: {}
         };
       },
       components: {
         shopcart,
-        cartcontrol
+        cartcontrol,
+        food
       },
       computed: {
         currentIndex () { // 计算到达哪个区域的区间的时候的对应的索引值
@@ -105,6 +111,13 @@
         });
       },
       methods: {
+        selectFood (food, event) {
+          if (!event._constructed) {
+            return;
+          }
+          this.selectedFood = food;
+          this.$refs['food'].show();
+        },
         selectMenu (index, event) {
           if (!event._constructed) {
             return; // 浏览器没有_constructed属性，当浏览器派发事件时，阻止，当scroll派发时则事件可以成功，否则pc端将派发两次事件
@@ -232,10 +245,6 @@
             .price
               font-weight : 700
               line-height :24px
-            .cartcontrol-wrapper
-              position : absolute
-              right: 0
-              bottom :12px
               .now
                 margin-right : 8px
                 font-size : 14px
@@ -244,6 +253,11 @@
                 text-decoration : line-through
                 font-size : 10px
                 color : rgb(147, 153, 159)
+            .cartcontrol-wrapper
+              position : absolute
+              right: 0
+              bottom :12px
+
 
 
 </style>
