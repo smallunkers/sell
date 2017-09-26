@@ -8,5 +8,5 @@
 另外抽象复用的组件 cartcontrol 加入去除按钮组件， star 评分组件
 另外引入better-scroll插件来控制滑动。
 截图如下：
-![image](https://github.com/smallunkers/sell/blob/master/1.jpg)
-![image](https://github.com/smallunkers/sell/blob/master/2.jpg)
+![image](https://github.com/smallunkers/sell/blob/master/1.JPG)
+![image](https://github.com/smallunkers/sell/blob/master/2.JPG)
