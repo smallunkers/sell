@@ -1,3 +1,4 @@
+<!--评价详情和只看由内容评价展示组件-->
 <template>
     <div class="ratingselect">
         <div class="rating-type border-1px">

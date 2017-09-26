@@ -1,3 +1,4 @@
+<!--food详情页-->
 <template>
     <transition name="move">
       <div>

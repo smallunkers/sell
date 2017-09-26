@@ -1,3 +1,4 @@
+<!--商品添加和去除组件-->
 <template>
   <div class="cartcontrol">
     <transition name="move">

@@ -87,7 +87,8 @@
       },
       data () {
         return {
-            detailShow: false
+            detailShow: false,
+            classMap: []
         };
       },
       created () {

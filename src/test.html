@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+  var A = function () {
+    this.c = 'aa';
+    this.set = function () {
+      console.log('aaaaaaa');
+    };
+  };
+  alert(A.b);
+  var C = function () {
+    A.call(this);
+  };
+  C.prototype = new A();
+  var child = new C();
+  var child1 = new C();
+  console.log(child.set === child1.set);
+  A.prototype.sayName = function () {
+    console.log('a');
+  };
+
+  // B的实例继承了A的属性
+  var B = function () { };
+  B.prototype = Object.create(A.prototype);
+  var b = new B();
+  b.sayName();  // a
+  function Car (desc) {
+    this.desc = desc;
+    this.color = 'red';
+    this.number = 10;
+  }
+  var p = {
+    a: 10,
+    b: 100,
+    c: 1000
+  };
+  Car.prototype = {
+    getInfo: function () {
+      return 'A ' + this.color + ' ' + this.desc + '.';
+    }
+  };
+  Car.prototype.c = '1';
+  // instantiate object using the constructor function
+  var car = Object.create(p);
+//  var car1 = new Car();
+  car.color = 'blue';
+//  alert(car.getInfo());
+  console.log(car);
+//  console.log(car1.number);
+</script>
+</html>

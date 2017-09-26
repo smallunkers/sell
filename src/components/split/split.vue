@@ -1,3 +1,4 @@
+<!--分割区块线的组件-->
 <template>
     <div class="split"></div>
 </template>

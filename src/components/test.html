@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="position: relative">
+     <div style="position: absolute; width:100%; top:0; bottom:500px;background-color: #449fdb;left:0">sdajkdhjaskdhaksj</div>
+    </div>
+</body>
+<script type="text/javascript">
+  var obj2 = {
+        id: 2333,
+        init: setTimeout(() => {
+       console.log(this.id);
+     }, 1000)
+    };
+  obj2.init;
+  window.val = 1;
+  var obj = {
+    val: 3,
+    dbl: function () {
+      this.val *= 2;
+      console.log(this.val);
+    }
+  };
+  // 说出下面的输出结果
+  obj.dbl();
+  var func = obj.dbl;
+  func();
+  function Parent (age) {
+    this.name = ['mike', 'jack', 'smith'];
+    this.weight = 700;
+    this.age = age;
+    this.setweight = function (weight) {
+      this.weight = weight;
+    };
+  }
+    Parent.prototype.number = 200;
+    var a1 = new Parent();
+    var a3 = new Parent();
+    alert(a1.name === a3.name);
+    a1.number = 400;
+    alert(a3.number);
+  function Child (sex) {
+    this.sex = sex;
+  }
+  Child.prototype = new Parent();
+  var test = new Child('男');
+  var p = new Child('女');
+  test.number = 300;
+  alert(a1.setweight === a3.setweight);
+  alert(p.setweight === test.setweight);
+  test.age = 12;
+  test.setweight(600);
+  alert(test.sex);
+//  alert(p.weight === test.weight);
+//  alert(test.weight);
+//  alert(p.weight);
+//  alert(test.age);// 21
+//  alert(p.age);
+//  alert(test.name);// mike,jack,smith
+//  test.name.push('bill');
+//  alert(test.name);// mike,jack,smith,bill
+//  alert(p.name);
+  function Animal (name) {
+    // 属性
+    this.name = name || 'Animal';
+    // 实例方法
+    this.sleep = function () {
+      alert('正在睡觉！');
+    };
+  }
+  // 原型方法
+  Animal.prototype.eat = function (food) {
+    console.log(this.name + '正在吃：' + food);
+  };
+
+  function Cat (name) {
+    Animal.call(this);
+    this.name = name || 'Tom';
+  }
+  // Test Code
+  var cat = new Cat();
+  alert(cat.name);
+  alert(cat.sleep());
+//  alert(cat.eat());
+//  alert(cat instanceof Animal); // false
+//  alert(cat instanceof Cat); // true
+  var array1 = [0, 1, 5, 15, 10];
+//  let b = a;let a = {
+  //    name: 'sb',
+  //        age: '12'
+  //  };
+//  alert(b === a);
+  array1.reverse();
+//  alert(array1);
+  function Pare () {
+    this.name = 'parent';
+    this.arr = [];
+  };
+  var h = new Pare();
+  var son = Object.create(h);// 基于parent创建对象
+  var son2 = Object.create(h);
+  son.name = 'son';
+  son2.name = 'son2';
+//  son.arr.push(1);
+//  console.log(son2.arr);
+//  console.log(son.arr);
+//  console.log(son2);
+//  son.say = function () {
+//    console.log(this.name);
+//  };
+</script>
+</html>

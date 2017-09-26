@@ -1,3 +1,4 @@
+<!--评价页-->
 <template>
     <div class="ratings" ref="ratings">
         <div class="ratings-content">
@@ -232,10 +233,10 @@
         .star-wrapper
           margin-bottom :6px
           font-size:0
-          star,.deliveryTime
+          .star,.deliveryTime
             display:inline-block
             vertical-align :top
-          star
+          .star
             margin-bottom:4px
           .deliveryTime
             font-size: 10px

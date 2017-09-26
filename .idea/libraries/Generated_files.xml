@@ -2,19 +2,31 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/dist/config/index.js" />
-        <item url="file://$PROJECT_DIR$/dist/build/dev-server.js" />
-        <item url="file://$PROJECT_DIR$/dist/src/main.js" />
+        <item url="file://$PROJECT_DIR$/dist/prod.server.js" />
+        <item url="file://$PROJECT_DIR$/dist/src/common/js/util.js" />
+        <item url="file://$PROJECT_DIR$/dist/src/common/js/store.js" />
         <item url="file://$PROJECT_DIR$/dist/src/common/js/date.js" />
         <item url="file://$PROJECT_DIR$/dist/sell_icomoon/demo-files/demo.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/static/js/manifest.c1cb7b0a8ccb72c18e82.js" />
+        <item url="file://$PROJECT_DIR$/dist/config/index.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/static/js/app.747eebf040039b93919b.js" />
+        <item url="file://$PROJECT_DIR$/dist/build/dev-server.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/static/js/vendor.8fe0bc5c96a1fa078125.js" />
+        <item url="file://$PROJECT_DIR$/dist/src/main.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/dist/config/index.js" />
-      <root url="file://$PROJECT_DIR$/dist/build/dev-server.js" />
-      <root url="file://$PROJECT_DIR$/dist/src/main.js" />
+      <root url="file://$PROJECT_DIR$/dist/prod.server.js" />
+      <root url="file://$PROJECT_DIR$/dist/src/common/js/util.js" />
+      <root url="file://$PROJECT_DIR$/dist/src/common/js/store.js" />
       <root url="file://$PROJECT_DIR$/dist/src/common/js/date.js" />
       <root url="file://$PROJECT_DIR$/dist/sell_icomoon/demo-files/demo.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/static/js/manifest.c1cb7b0a8ccb72c18e82.js" />
+      <root url="file://$PROJECT_DIR$/dist/config/index.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/static/js/app.747eebf040039b93919b.js" />
+      <root url="file://$PROJECT_DIR$/dist/build/dev-server.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/static/js/vendor.8fe0bc5c96a1fa078125.js" />
+      <root url="file://$PROJECT_DIR$/dist/src/main.js" />
     </CLASSES>
     <SOURCES />
   </library>
